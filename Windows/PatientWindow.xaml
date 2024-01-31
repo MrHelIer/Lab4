@@ -1,0 +1,73 @@
+﻿<Window x:Class="Lab4.PatientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab4"
+        mc:Ignorable="d"
+        Title="Пациент" Width="720" Height="420">
+    <Grid Margin="10 0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <Label Content="Полное имя:"/>
+            <TextBox x:Name="FullName" Height="25" Margin="25 10"/>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Label Content="Дней в клинике:"/>
+            <TextBox x:Name="Days" Height="25" Margin="25 10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+            <Label Content="Адрес проживания:"/>
+            <TextBox x:Name="PlaceOfResidence" Height="25" Margin="25 10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.Column="0">
+            <Label Content="Пол:"/>
+            <ComboBox x:Name="cbGender"  Height="25" Margin="25 10">
+                <ComboBoxItem Content="муж."/>
+                <ComboBoxItem Content="жен."/>
+            </ComboBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="1">
+            <Label Content="Полные года:"/>
+            <TextBox x:Name="Age" Height="25" Margin="25 10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Grid.Column="0">
+            <Label Content="Диагноз:"/>
+            <TextBox x:Name="DiagnosisName" Height="25" Margin="25 10"/>
+        </StackPanel>
+        <StackPanel Grid.Row="3" Grid.Column="1">
+            <Label Content="Код диагноза:"/>
+            <TextBox x:Name="DiagnosisCode" Height="25" Margin="25 10"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Grid.Column="0">
+            <Label Content="Выберите тариф:"/>
+            <ComboBox x:Name="cbTariffs" Height="25" Margin="25 10"/>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="1">
+            <Label Content="Стоимость лечения:"/>
+            <TextBox x:Name="Cost" Height="25" Margin="25 10"/>
+        </StackPanel>
+        
+        <StackPanel Grid.Row="5" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="OK" Margin="10 20" Width="100" Click="Button_Click"/>
+            <Button Content="Cancel" Margin="10 20" Width="100" Click="Button_Click_1"/>
+        </StackPanel>
+       
+    </Grid>
+</Window>

@@ -1,0 +1,75 @@
+﻿<Window x:Class="Lab4.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab4"
+        mc:Ignorable="d"
+        Title="Main" Height="450" Width="900" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="11*"/>
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition Width="25*"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="ListPatients" Grid.Column="0"
+          Margin="10,10,10,10" FontSize="20" Grid.ColumnSpan="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition MinWidth="15"/>
+                            <ColumnDefinition MinWidth="85"/>
+                            <ColumnDefinition MinWidth="50"/>
+                            <ColumnDefinition MinWidth="50"/>
+                            <ColumnDefinition MinWidth="50"/>
+                            <ColumnDefinition MinWidth="50"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <TextBlock Text="{Binding Path=FullName}" Margin="5"
+                                   Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+                        <TextBlock Text="{Binding Path=Age}" Margin="5"
+                                   Grid.Row="0" Grid.Column="2"/>
+                        <TextBlock Text="{Binding Path=Gender}" Margin="5"
+                                   Grid.Row="0" Grid.Column="3"/>
+                        <TextBlock Text="{Binding Path=Days}" Margin="5"
+                                   Grid.Row="0" Grid.Column="4"/>
+                        <TextBlock Text="{Binding Path=Cost}" Margin="5"
+                                   Grid.Row="0" Grid.Column="5"/>
+                        
+                        <TextBlock Text="{Binding Path=PlaceOfResidence}" Margin="5"
+                                   Grid.Row="1" Grid.ColumnSpan="6"/>
+
+                        <TextBlock Text="{Binding Path=DiagnosisCode}" Margin="5"
+                                   Grid.Row="2" Grid.Column="0"/>
+                        <TextBlock Text="{Binding Path=DiagnosisName}" Margin="5"
+                                   Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="5"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Изменить" Click="MenuItem_Click"></MenuItem>
+                    <MenuItem Header="Удалить" Click="MenuItem_Click_1"></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
+        </ListView>
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="26*"/>
+                <ColumnDefinition Width="19*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button Content="Пациенты" Grid.Row="0" Margin="10,70,10,70" Click="Button_Click_1" Grid.ColumnSpan="2"/>
+            <Button Content="Тарифы" Grid.Row="1" Margin="10,70,10,70" Click="Button_Click" Grid.ColumnSpan="2"/>
+        </Grid>
+    </Grid>
+</Window>
